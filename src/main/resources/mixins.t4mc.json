@@ -1,0 +1,18 @@
+{
+  "package": "cf.rfl890.t4mc.mixins",
+  "required": true,
+  "refmap": "mixins.t4mc.refmap.json",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.7",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "NetworkManagerMixin",
+    "IntegratedServerMixin"
+  ],
+  "server": [],
+  "client": [
+    "GuiConnectingMixin",
+    "GuiShareToLanMixin",
+    "ServerAddressMixin"
+  ]
+}
