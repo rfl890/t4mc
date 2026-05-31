@@ -20,17 +20,14 @@ import java.util.concurrent.locks.ReentrantLock;
 @Mixin(IntegratedServer.class)
 public abstract class IntegratedServerMixin implements TicketAccessor {
     @Shadow
-    private int publishedPort;
-    @Shadow
     @Final
     private static Logger LOGGER;
-
-    @Unique
-    private volatile long t4mc$shutdownToken = 0;
-
     @Unique
     private final ReentrantLock t4mc$shutdownLock = new ReentrantLock();
-
+    @Shadow
+    private int publishedPort;
+    @Unique
+    private volatile long t4mc$shutdownToken = 0;
     @Unique
     private String t4mc$ticket = null;
 

@@ -12,6 +12,7 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
 import java.util.concurrent.locks.ReentrantLock;
 
 @Mixin(Connection.class)
@@ -19,12 +20,10 @@ public abstract class ConnectionMixin implements ShutdownTokenAccessor {
     @Shadow
     @Final
     private static Logger LOGGER;
-
-    @Unique
-    private long t4mc$shutdownToken = 0;
-
     @Unique
     private final ReentrantLock t4mc$shutdownLock = new ReentrantLock();
+    @Unique
+    private long t4mc$shutdownToken = 0;
 
     @Override
     public void t4mc$setShutdownToken(long token) {

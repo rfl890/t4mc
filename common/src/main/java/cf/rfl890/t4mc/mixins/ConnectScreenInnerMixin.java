@@ -4,7 +4,6 @@ import cf.rfl890.iroh.IrohBridge;
 import cf.rfl890.t4mc.interfaces.ShutdownTokenAccessor;
 import com.mojang.logging.LogUtils;
 import io.netty.channel.ChannelFuture;
-import net.minecraft.client.gui.screens.ConnectScreen;
 import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.network.Connection;
 import net.minecraft.util.HttpUtil;
@@ -22,13 +21,11 @@ import java.net.InetSocketAddress;
 
 @Mixin(targets = "net/minecraft/client/gui/screens/ConnectScreen$1")
 public abstract class ConnectScreenInnerMixin {
+    @Unique
+    private static final Logger t4mc$LOGGER = LogUtils.getLogger();
     @Shadow(aliases = {"val$server", "val$p_252078_"})
     @Final
     ServerData server;
-
-    @Unique
-    private static final Logger t4mc$LOGGER = LogUtils.getLogger();
-
     @Unique
     private int t4mc$port = -1;
 
