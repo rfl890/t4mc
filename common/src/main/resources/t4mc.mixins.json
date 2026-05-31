@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "package": "cf.rfl890.t4mc.mixins",
+  "compatibilityLevel": "JAVA_21",
+  "minVersion": "0.8",
+  "client": [
+    "ConnectScreenInnerMixin",
+    "DirectJoinServerScreenMixin",
+    "IntegratedServerMixin",
+    "ServerAddressMixin",
+    "ShareToLanScreenMixin"
+  ],
+  "mixins": [
+    "ConnectionMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "t4mc",
+  "version": "${version}",
+  "name": "t4mc",
+  "description": "Easy world sharing for Minecraft",
+  "authors": [
+    "rfl890"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+  "license": "MIT",
+  "icon": "assets/t4mc/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "cf.rfl890.t4mc.fabric.T4mcFabric"
+    ],
+    "client": [
+      "cf.rfl890.t4mc.fabric.client.T4mcFabricClient"
+    ]
+  },
+  "mixins": [
+    "t4mc.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.19.2",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
