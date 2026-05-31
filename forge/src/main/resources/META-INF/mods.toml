@@ -1,0 +1,28 @@
+modLoader = "javafml"
+loaderVersion = "[47,)"
+#issueTrackerURL = ""
+license = "MIT"
+
+[[mods]]
+modId = "t4mc"
+version = "${version}"
+displayName = "t4mc"
+authors = "rfl890"
+description = '''
+Easy world sharing for Minecraft
+'''
+logoFile = "assets/t4mc/icon.png"
+
+[[dependencies.t4mc]]
+modId = "forge"
+mandatory = true
+versionRange = "[47,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.t4mc]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.20.1,)"
+ordering = "NONE"
+side = "BOTH"
