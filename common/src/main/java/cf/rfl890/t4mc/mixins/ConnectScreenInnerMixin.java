@@ -33,7 +33,7 @@ public abstract class ConnectScreenInnerMixin {
     @Unique
     private long t4mc$shutdownToken = 0;
 
-    @Inject(method = "run", at = @At(value = "INVOKE", target = "Lnet/minecraft/network/Connection;connect(Ljava/net/InetSocketAddress;ZLnet/minecraft/network/Connection;)Lio/netty/channel/ChannelFuture;"))
+    @Inject(method = "run", at = @At(value = "INVOKE", target = "Lnet/minecraft/network/Connection;connect(Ljava/net/InetSocketAddress;ZLnet/minecraft/network/Connection;)Lio/netty/channel/ChannelFuture;", remap = true), remap = false)
     private void runHead(CallbackInfo ci) {
         int chosen_port = HttpUtil.getAvailablePort();
 
@@ -48,7 +48,7 @@ public abstract class ConnectScreenInnerMixin {
         }
     }
 
-    @Redirect(method = "run", at = @At(value = "INVOKE", target = "Lnet/minecraft/network/Connection;connect(Ljava/net/InetSocketAddress;ZLnet/minecraft/network/Connection;)Lio/netty/channel/ChannelFuture;"))
+    @Redirect(method = "run", at = @At(value = "INVOKE", target = "Lnet/minecraft/network/Connection;connect(Ljava/net/InetSocketAddress;ZLnet/minecraft/network/Connection;)Lio/netty/channel/ChannelFuture;", remap = true), remap = false)
     private ChannelFuture connectRedirector(InetSocketAddress inetSocketAddress, boolean bl, Connection arg) {
         if (this.t4mc$port != -1) {
             t4mc$LOGGER.info("Connecting to Iroh via localhost bridge on port {}", this.t4mc$port);
