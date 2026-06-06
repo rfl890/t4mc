@@ -24,7 +24,7 @@ import java.net.InetSocketAddress;
 public abstract class ConnectScreenInnerMixin {
     @Unique
     private static final Logger t4mc$LOGGER = LogUtils.getLogger();
-    @Shadow(aliases = {"val$server", "val$p_252078_"})
+    @Shadow(aliases = {"val$server", "val$p_252078_", "field_40415"})
     @Final
     ServerData server;
     @Unique
